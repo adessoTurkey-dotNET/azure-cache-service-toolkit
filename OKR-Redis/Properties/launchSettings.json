@@ -1,0 +1,8 @@
+{
+  "profiles": {
+    "OKR_Redis": {
+      "commandName": "Project",
+      "commandLineArgs": "host start --port 7149 --pause-on-error"
+    }
+  }
+}
