@@ -21,6 +21,7 @@ To use these functions, you will need the following:
 - Replace the placeholder values in the local.settings.json file with your own Azure Cache service connection.
 - Build and run the solution to test the functions locally.
 - Deploy the functions to Azure using the Azure Functions extension.
+- Add your local.settings.json parameters to your Function App Configuration(for best practices reference values from Azure KeyVault.)
 
 ### Usage
 To use these functions, you can call them via HTTP requests or by triggering them through other Azure services. Refer to the Azure Functions documentation for more information on how to use and trigger Azure Functions.
@@ -41,6 +42,25 @@ IRestResponse response = client.Execute(request);
 
 console.WriteLine(response.Content);
 ```
+
+### Using Azure Function app Configurations
+Configuration in Azure Functions refers to the process of setting up and managing the various options and settings that control the behavior of your functions. These configurations can include things like connection strings for external resources, runtime settings, and application settings that your functions may need in order to run properly. 
+ 
+You can easily read your values by using ConfigurationManager.cs from your Azure Functions app Configurations.
+
+```csharp
+        private ConfigurationManager()
+        {
+            this.APPINSIGHTS_INSTRUMENTATIONKEY = Util.GetConfig("APPINSIGHTS_INSTRUMENTATIONKEY", "");
+            this.CacheConnection = Util.GetConfig("CacheConnection", "");
+        }
+        
+         static RedisCacheService()
+        {
+            var connection = ConfigurationManager.Instance.CacheConnection;
+            _connectionMultiplexer = ConnectionMultiplexer.Connect(connection);
+        }
+ ```
 
 ### Contributions
 You are very welcome for contributions to this repository! If you have an idea for a new function or improvement, please open an issue or submit a pull request.
