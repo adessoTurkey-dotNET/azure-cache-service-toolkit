@@ -46,7 +46,7 @@ console.WriteLine(response.Content);
 ### Using Azure Function app Configurations
 Configuration in Azure Functions refers to the process of setting up and managing the various options and settings that control the behavior of your functions. These configurations can include things like connection strings for external resources, runtime settings, and application settings that your functions may need in order to run properly. 
  
-You can easily read your values by using ConfigurationManager.cs from your Azure Functions app Configurations.
+You can easily read your values from your Azure Functions app Configurations by using ConfigurationManager.cs.
 
 ```csharp
         private ConfigurationManager()
