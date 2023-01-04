@@ -1,7 +1,7 @@
 # OKR-Redis
 
 ### Azure Cache Service Functions
-This repository contains a collection of Azure Functions for managing the Azure Cache service. The following functions are included:
+This repository contains a collection of HTTP triggered Azure Functions for managing the Azure Cache service. The following functions are included:
 
 - FlushCache: Clears all entries from the cache.
 - DeleteCache: Deletes a specific entry from the cache.
