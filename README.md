@@ -42,8 +42,8 @@ IRestResponse response = client.Execute(request);
 console.WriteLine(response.Content);
 ```
 
-Contributions
+### Contributions
 You are very welcome for contributions to this repository! If you have an idea for a new function or improvement, please open an issue or submit a pull request.
 
-License
+### License
 This project is licensed under the MIT License. See LICENSE for details.
